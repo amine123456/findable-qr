@@ -267,23 +267,60 @@ const Index = () => {
 
       {/* Features Section */}
       <section className="content-section bg-white">
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-16 animate-fade-up">
           <h2 className="heading-lg">Why Choose Troovi</h2>
           <p className="subtitle">Advanced features for complete peace of mind</p>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {[
-            "Real-time notifications when items are found",
-            "Secure messaging system",
-            "24/7 customer support",
-            "Worldwide coverage",
-            "Multiple language support",
-            "Customizable privacy settings",
+            {
+              icon: MessageCircle,
+              title: "Real-time Notifications",
+              description: "Get instant alerts when your items are found. Stay updated in real-time through our mobile app.",
+            },
+            {
+              icon: Shield,
+              title: "Secure Messaging",
+              description: "Built-in encrypted messaging system ensures safe communication between finders and owners.",
+            },
+            {
+              icon: Star,
+              title: "24/7 Support",
+              description: "Our dedicated support team is always here to help you with any questions or concerns.",
+            },
+            {
+              icon: Tag,
+              title: "Global Coverage",
+              description: "Our QR codes work worldwide, helping you recover items no matter where they're found.",
+            },
+            {
+              icon: MessageCircle,
+              title: "Multi-language Support",
+              description: "Breaking language barriers with automatic translation in over 30 languages.",
+            },
+            {
+              icon: Shield,
+              title: "Privacy Controls",
+              description: "You decide what information to share. Your privacy is always in your control.",
+            }
           ].map((feature, index) => (
-            <div key={index} className="flex items-center gap-3 p-4">
-              <Check className="w-6 h-6 text-primary shrink-0" />
-              <span className="text-lg">{feature}</span>
-            </div>
+            <Card 
+              key={index} 
+              className="p-6 hover:shadow-lg transition-all duration-300 group relative overflow-hidden bg-gradient-to-br from-white to-secondary/20"
+            >
+              <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -mr-16 -mt-16 transform group-hover:scale-150 transition-transform duration-500" />
+              <div className="relative z-10">
+                <div className="w-12 h-12 mb-6 bg-primary/10 rounded-xl flex items-center justify-center transform group-hover:scale-110 group-hover:bg-primary/20 transition-all duration-300">
+                  <feature.icon className="w-6 h-6 text-primary" />
+                </div>
+                <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors">
+                  {feature.title}
+                </h3>
+                <p className="text-muted-foreground">
+                  {feature.description}
+                </p>
+              </div>
+            </Card>
           ))}
         </div>
       </section>

@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { QrCode, Shield, Tag, Star, MessageCircle, Check, ArrowRight, Wallet, PawPrint, Briefcase, Camera, Laptop, Key, Wine, Sunglasses, Map, Package, Watch, Phone } from "lucide-react";
+import { QrCode, Shield, Tag, Star, MessageCircle, Check, ArrowRight, Wallet, PawPrint, Briefcase, Camera, Laptop, Key, Wine, Glasses, Map, Package, Watch, Phone } from "lucide-react";
 
 const Index = () => {
   return (
@@ -178,7 +178,7 @@ const Index = () => {
               image: "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?fit=crop&w=300",
             },
             {
-              icon: Sunglasses,
+              icon: Glasses,
               title: "Eyewear",
               description: "Tiny QR stickers for glasses cases and premium eyewear.",
               image: "https://images.unsplash.com/photo-1511499767150-a48a237f0083?fit=crop&w=300",

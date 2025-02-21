@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { QrCode, Shield, Tag, Star, MessageCircle, Check, ArrowRight, Wallet, PawPrint, Briefcase, Camera, Laptop, Key, Wine, Glasses, Map, Package, Watch, Phone } from "lucide-react";
@@ -21,16 +22,17 @@ const Index = () => {
               </p>
             </div>
             <div className="flex flex-wrap gap-4">
-              <Button size="lg" className="text-lg">
+              <Button size="lg" className="text-lg group transition-all duration-300 hover:scale-105">
                 Get Started
+                <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
-              <Button size="lg" variant="outline" className="text-lg">
+              <Button size="lg" variant="outline" className="text-lg transition-all duration-300 hover:scale-105">
                 Learn More
               </Button>
             </div>
           </div>
           <div className="relative animate-fade-in">
-            <div className="glass-panel rounded-2xl p-8 relative z-10">
+            <div className="glass-panel rounded-2xl p-8 relative z-10 transition-all duration-300 hover:scale-[1.02] hover:shadow-xl">
               <img
                 src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d"
                 alt="Troovi in action"
@@ -108,7 +110,11 @@ const Index = () => {
               rating: 5,
             },
           ].map((review, index) => (
-            <Card key={index} className="p-8 hover:shadow-lg transition-shadow">
+            <Card 
+              key={index} 
+              className="p-8 hover:shadow-xl transition-all duration-300 hover:scale-[1.02] animate-fade-in"
+              style={{ animationDelay: `${index * 150}ms` }}
+            >
               <div className="flex gap-1 text-yellow-400 mb-4">
                 {[...Array(review.rating)].map((_, i) => (
                   <Star key={i} className="w-5 h-5 fill-current" />
@@ -231,7 +237,7 @@ const Index = () => {
 
       {/* FAQ Section */}
       <section className="content-section bg-secondary">
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-16 animate-fade-up">
           <h2 className="heading-lg">Frequently Asked Questions</h2>
           <p className="subtitle">Everything you need to know about Troovi</p>
         </div>
@@ -254,7 +260,11 @@ const Index = () => {
               a: "We offer various packages starting from basic protection to premium services. Visit our pricing page for detailed information.",
             },
           ].map((faq, index) => (
-            <div key={index} className="py-6">
+            <div 
+              key={index} 
+              className="py-6 hover:bg-white/50 transition-colors duration-300 rounded-lg p-4 animate-fade-in"
+              style={{ animationDelay: `${index * 150}ms` }}
+            >
               <h3 className="flex items-center gap-2 text-xl font-semibold mb-2">
                 <MessageCircle className="w-6 h-6 text-primary" />
                 {faq.q}
@@ -332,7 +342,7 @@ const Index = () => {
           <p className="subtitle mb-8">
             Join thousands of people who trust Troovi to protect their belongings
           </p>
-          <Button size="lg" className="text-lg group">
+          <Button size="lg" className="text-lg group transition-all duration-300 hover:scale-105">
             Start Protecting Now
             <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
           </Button>

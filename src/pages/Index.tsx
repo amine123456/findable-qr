@@ -1,7 +1,6 @@
-
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { QrCode, Shield, Tag, Star, MessageCircle, Check, ArrowRight } from "lucide-react";
+import { QrCode, Shield, Tag, Star, MessageCircle, Check, ArrowRight, Wallet, PawPrint, Briefcase, Camera, Laptop, Key, Wine, Sunglasses, Map, Package, Watch, Phone } from "lucide-react";
 
 const Index = () => {
   return (
@@ -119,6 +118,111 @@ const Index = () => {
               <div>
                 <h4 className="font-semibold">{review.name}</h4>
                 <p className="text-sm text-muted-foreground">{review.role}</p>
+              </div>
+            </Card>
+          ))}
+        </div>
+      </section>
+
+      {/* Products & Use Cases */}
+      <section className="content-section bg-white">
+        <div className="text-center max-w-3xl mx-auto mb-16 animate-fade-up">
+          <h2 className="heading-lg">Protect Everything You Value</h2>
+          <p className="subtitle">
+            From everyday essentials to luxury items, Troovi works with anything you want to protect and recover
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 animate-fade-up">
+          {[
+            {
+              icon: Wallet,
+              title: "Wallets & Cards",
+              description: "Never lose your wallet again. Our slim QR stickers fit perfectly on wallets and card holders.",
+              image: "https://images.unsplash.com/photo-1627123424574-724758594e93?fit=crop&w=300",
+            },
+            {
+              icon: PawPrint,
+              title: "Pet Accessories",
+              description: "Keep your furry friends safe with our durable QR tags for collars and harnesses.",
+              image: "https://images.unsplash.com/photo-1582562124811-c09040d0a901?fit=crop&w=300",
+            },
+            {
+              icon: Laptop,
+              title: "Electronics",
+              description: "Protect your devices with tamper-evident QR stickers that last.",
+              image: "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?fit=crop&w=300",
+            },
+            {
+              icon: Briefcase,
+              title: "Luggage & Bags",
+              description: "Travel worry-free with our baggage tags and stickers.",
+              image: "https://images.unsplash.com/photo-1553531384-397c80973a0b?fit=crop&w=300",
+            },
+            {
+              icon: Camera,
+              title: "Photography Gear",
+              description: "Protect your valuable camera equipment with discrete QR labels.",
+              image: "https://images.unsplash.com/photo-1452721226468-f95fb66ebf83?fit=crop&w=300",
+            },
+            {
+              icon: Key,
+              title: "Keys & Keychains",
+              description: "Add our mini QR tags to your keys for quick recovery if lost.",
+              image: "https://images.unsplash.com/photo-1582139329536-e7284fbc2162?fit=crop&w=300",
+            },
+            {
+              icon: Wine,
+              title: "Wine Collection",
+              description: "Track and authenticate your wine collection with elegant QR labels.",
+              image: "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?fit=crop&w=300",
+            },
+            {
+              icon: Sunglasses,
+              title: "Eyewear",
+              description: "Tiny QR stickers for glasses cases and premium eyewear.",
+              image: "https://images.unsplash.com/photo-1511499767150-a48a237f0083?fit=crop&w=300",
+            },
+            {
+              icon: Map,
+              title: "Sports Equipment",
+              description: "Weather-resistant tags for outdoor and sports gear.",
+              image: "https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?fit=crop&w=300",
+            },
+            {
+              icon: Package,
+              title: "Parcels & Deliveries",
+              description: "Track valuable shipments with our commercial QR system.",
+              image: "https://images.unsplash.com/photo-1595079676601-f1adf0993590?fit=crop&w=300",
+            },
+            {
+              icon: Watch,
+              title: "Luxury Items",
+              description: "Discrete authentication for high-value collectibles and accessories.",
+              image: "https://images.unsplash.com/photo-1524592094714-0f0654e20314?fit=crop&w=300",
+            },
+            {
+              icon: Phone,
+              title: "Mobile Devices",
+              description: "Secure your phone and accessories with our premium stickers.",
+              image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?fit=crop&w=300",
+            },
+          ].map((item, index) => (
+            <Card key={index} className="overflow-hidden group hover:shadow-lg transition-all duration-300">
+              <div className="aspect-video w-full relative">
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                <div className="absolute bottom-4 left-4 text-white flex items-center gap-2">
+                  <item.icon className="w-5 h-5" />
+                  <h3 className="font-semibold">{item.title}</h3>
+                </div>
+              </div>
+              <div className="p-4">
+                <p className="text-muted-foreground">{item.description}</p>
               </div>
             </Card>
           ))}
